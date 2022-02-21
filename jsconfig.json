@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "user/*": ["src/context/user*"],
+      "@/*": ["src/*"],
+      "app/*": ["src/app/*"],
+      "@seller/*": ["src/seller/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
