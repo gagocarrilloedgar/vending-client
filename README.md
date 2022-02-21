@@ -1,9 +1,9 @@
-# Vending machine - Client API
+# Vending machine - Client
 
 ## Installation
 
 ```bash
-git clone https://github.com/weis95/component-library
+git clone https://github.com/gagocarrillo/vending-client
 ```
 
 ```bash
