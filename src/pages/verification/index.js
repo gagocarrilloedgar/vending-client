@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Card, CardContent, CardHeader, Container, TextField, Typography } from '@mui/material'
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  TextField,
+  Typography
+} from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { Box } from '@mui/system'
 import reggexutil from 'shared/utils/reggex'
@@ -33,8 +41,6 @@ const VerificationView = () => {
 
   const handleChange = (e) => setVerificationCode(e.target.value)
 
-  console.log(error, verificationCode, verificationCode.match(reggexutil.number))
-
   return (
     <Container maxWidth="md">
       <Box
@@ -46,7 +52,10 @@ const VerificationView = () => {
         minHeight="100vh"
       >
         <Card variant="outlined">
-          <CardHeader title={t('verification_title')} subheader={t('verification_subtitle')} />
+          <CardHeader
+            title={t('verification_title')}
+            subheader={t('verification_subtitle')}
+          />
           <Box component="form" onSubmit={verify}>
             <CardContent sx={{ textAlign: 'center' }}>
               <TextField
@@ -61,14 +70,20 @@ const VerificationView = () => {
                 id="verificationCode"
                 autoComplete="verificationCode"
                 sx={{ width: '80%' }}
-                helperText={error ? t('verification_code_error', { ns: 'errors' }) : ''}
+                helperText={
+                  error ? t('verification_code_error', { ns: 'errors' }) : ''
+                }
                 label={t('verification_code')}
               />
               <Typography margin="10px" variant="body2">
                 {t('verification_email_not_found')}
                 <a
                   href="#"
-                  style={{ textDecoration: 'none', color: '#000', fontWeight: 'bolder' }}
+                  style={{
+                    textDecoration: 'none',
+                    color: '#000',
+                    fontWeight: 'bolder'
+                  }}
                   onClick={sendVerificationCode}
                 >
                   {t('new_email')}
@@ -76,7 +91,12 @@ const VerificationView = () => {
               </Typography>
             </CardContent>
             <CardContent>
-              <Button type="submit" onClick={verify} size="small" variant="contained">
+              <Button
+                type="submit"
+                onClick={verify}
+                size="small"
+                variant="contained"
+              >
                 {t('verification_button')}
               </Button>
             </CardContent>

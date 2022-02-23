@@ -10,12 +10,7 @@
   "reset_password_message_new": "Ahora lo redirigiremos a la página de inicio de sesión, donde podrá iniciar sesión con su nueva contraseña",
   "forgot_password_success": "La contraseña se ha restablecido correctamente.",
   "reset_password_success": "Le hemos enviado un correo electrónico con instrucciones sobre cómo restablecer su contraseña.",
-  "company_login_success": "Ha iniciado sesión correctamente.",
   "user_login_success": "Ha iniciado sesión correctamente.",
-  "company_onboarding_success": "Ha completado correctamente el proceso de incorporación.",
-  "company_register_success": "Se ha registrado correctamente.",
   "user_update_success": "Su perfil se ha actualizado correctamente.",
-  "company_update_success": "Su perfil se ha actualizado correctamente.",
-  "user_onboarding_success": "Ha completado correctamente el proceso de incorporación.",
   "user_register_success": "Se ha registrado correctamente."
 }

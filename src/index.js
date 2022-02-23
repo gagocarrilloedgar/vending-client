@@ -6,9 +6,9 @@ import { BrowserRouter } from 'react-router-dom'
 import App from 'App'
 import store from './store'
 import { Provider } from 'react-redux'
-import SnackbarProvider from 'shared/components/organisms/SnackbarAlert/SnackbarAlert'
-import Loader from 'shared/components/templates/Loader'
-import { SwitchThemeProvider } from 'shared/components/organisms/SwitchTheme/SwitchTheme'
+import SnackbarProvider from 'shared/components/SnackbarAlert/SnackbarAlert'
+import Loader from 'shared/components/Loader'
+import { SwitchThemeProvider } from 'shared/components/SwitchTheme/SwitchTheme'
 
 render(
   <React.StrictMode>

@@ -1,11 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import Login from 'shared/components/templates/Login/Login.jsx'
-import SnackbarAlert from 'shared/components/organisms/SnackbarAlert/SnackbarAlert.container'
-import { useSnackbar } from 'shared/components/organisms/SnackbarAlert/useSnackbar'
+import Login from 'shared/components/Login/Login.jsx'
+import SnackbarAlert from 'shared/components/SnackbarAlert/SnackbarAlert.container'
+import { useSnackbar } from 'shared/components/SnackbarAlert/useSnackbar'
 import { navigation } from 'shared/lib/constants'
-import UserService from 'context/user/domain/service'
-import UserRepository from 'context/user/infrastructure/repository'
+import UserService from 'user/domain/service'
+import UserRepository from 'user/infrastructure/repository'
 
 const UserLogin = () => {
   const userRepository = UserRepository()

@@ -2,7 +2,8 @@ import React from 'react'
 import Welcome from 'pages'
 import Verification from 'pages/verification'
 import { ForgotPassword, ResetPassword } from 'pages/password'
-import { UserAccount, UserLogin, UserRegister } from 'pages/user'
+import { UserAccount, UserLogin, UserRegister, UserDashboard } from 'pages/user'
+
 import { navigation } from 'shared/lib/constants'
 
 const {
@@ -13,7 +14,8 @@ const {
   forgotPassword,
   user,
   userLogin,
-  userRegister
+  userRegister,
+  userAccount
 } = navigation
 
 const routes = [
@@ -32,9 +34,10 @@ const routes = [
       {
         path: user,
         children: [
-          { index: true, element: <UserAccount /> },
+          { index: true, element: <UserDashboard /> },
           { path: userLogin, element: <UserLogin /> },
-          { path: userRegister, element: <UserRegister /> }
+          { path: userRegister, element: <UserRegister /> },
+          { path: userAccount, element: <UserAccount /> }
         ]
       }
     ]

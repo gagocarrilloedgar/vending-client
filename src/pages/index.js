@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next'
 const Welcome = () => {
   const { t } = useTranslation()
   return (
-    <Container maxWidth="s">
+    <Container maxWidth="xl">
       <Box sx={{ paddingTop: 20 }}>
         <Box
           sx={{
@@ -20,7 +20,12 @@ const Welcome = () => {
           aria-hidden="true"
         />
         {/* Modify with the logo */}
-        <Typography color="primary" component="h1" variant="h1" fontWeight={900}>
+        <Typography
+          color="primary"
+          component="h1"
+          variant="h1"
+          fontWeight={900}
+        >
           LOGO
         </Typography>
         <Box
@@ -41,7 +46,12 @@ const Welcome = () => {
               paddingTop: 4
             }}
           >
-            <Button component={Link} to="/user/login" variant="contained" sx={{ marginRight: 2 }}>
+            <Button
+              component={Link}
+              to="/user/login"
+              variant="contained"
+              sx={{ marginRight: 2 }}
+            >
               {t('welcome_login')}
             </Button>
             <Button component={Link} to="/user/register" variant="outlined">

@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-
+import {
+  Container,
+  Box,
+  Typography,
+  CardContent,
+  CardActions,
+  Button
+} from '@mui/material'
 import Proptypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
+import PasswordField from 'shared/components/TextFields/Password'
 
-import UserRepository from 'context/user/infrastructure/repository'
-import UserService from 'context/user/domain/service'
+import UserRepository from 'user/infrastructure/repository'
+import UserService from 'user/domain/service'
 
-import { useSnackbar } from 'shared/components/organisms/SnackbarAlert/useSnackbar'
-import ResetContainer from './container'
+import { useSnackbar } from 'shared/components/SnackbarAlert/useSnackbar'
+import SnackbarAlert from 'shared/components/SnackbarAlert/SnackbarAlert.container'
 
 const ResetPassword = () => {
   const { t } = useTranslation(['common', 'errors', 'sucess'])
@@ -48,16 +56,50 @@ const ResetPassword = () => {
   }
 
   return (
-    <ResetContainer
-      passwordConfirmError={passwordConfirmError}
-      passwords={passwords}
-      passwordError={passwordError}
-      setPasswords={setPasswords}
-      setPasswordError={setPasswordError}
-      setPasswordConfirmError={setPasswordConfirmError}
-      handleChange={handleChange}
-      onSubmit={onSubmit}
-    />
+    <Container maxWidth="sm">
+      <Box
+        style={{
+          textAlign: 'left',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          display: 'flex'
+        }}
+        minHeight="100vh"
+      >
+        <CardContent>
+          <Typography
+            component="h3"
+            style={{ fontWeight: 800 }}
+            variant="h5"
+            gutterBottom
+          >
+            {t('reset_password_title')}
+          </Typography>
+          <Typography>{t('reset_password_subtitle')}</Typography>
+          <Box noValidate sx={{ mt: 1 }}>
+            <PasswordField
+              error={passwordError}
+              password={passwords.password}
+              setError={setPasswordError}
+              handleChange={handleChange}
+            />
+            <PasswordField
+              error={passwordConfirmError}
+              passwordConfirm={passwords.confirmPassword}
+              password={passwords.password}
+              setError={setPasswordConfirmError}
+              handleChange={handleChange}
+            />
+          </Box>
+        </CardContent>
+        <CardActions>
+          <Button fullWidth variant="outlined" onClick={onSubmit}>
+            {t('reset_password_button')}
+          </Button>
+        </CardActions>
+      </Box>
+      <SnackbarAlert />
+    </Container>
   )
 }
 

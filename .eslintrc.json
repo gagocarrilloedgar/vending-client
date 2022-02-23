@@ -11,6 +11,11 @@
     },
     "ecmaVersion": 12
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "plugins": ["react"],
   "rules": {
     "indent": "off",

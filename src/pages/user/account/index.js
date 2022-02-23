@@ -1,19 +1,19 @@
 import React, { createRef, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import MessageAlert from 'shared/components/organisms/MessageAlert/MessageAlert'
-import PersonalInfo from 'context/user/application/Personalnfo/Personalnfo'
-import UserLayout from 'context/user/application/Layout/Layout'
-import SnackbarAlert from 'shared/components/organisms/SnackbarAlert/SnackbarAlert.container'
-import { useSnackbar } from 'shared/components/organisms/SnackbarAlert/useSnackbar'
-import UserRepository from 'context/user/infrastructure/repository'
-import UserService from 'context/user/domain/service'
+import MessageAlert from 'shared/components/MessageAlert/MessageAlert'
+import PersonalInfo from 'user/application/Personalnfo/Personalnfo'
+import UserLayout from 'user/application/Layout/Layout'
+import SnackbarAlert from 'shared/components/SnackbarAlert/SnackbarAlert.container'
+import { useSnackbar } from 'shared/components/SnackbarAlert/useSnackbar'
+import UserRepository from 'user/infrastructure/repository'
+import UserService from 'user/domain/service'
 
 const InitState = {
-  first_name: '',
-  last_name: '',
+  id: '',
+  username: '',
   email: '',
-  deposit: 0
+  deposit: ''
 }
 
 const UserAccount = () => {
@@ -25,7 +25,7 @@ const UserAccount = () => {
 
   const titleRef = createRef()
   const [open, setOpen] = useState(false)
-  const [formData, setFormData] = useState({ ...InitState })
+  const [formData, setFormData] = useState(user)
 
   useEffect(() => {
     if (formData === InitState) setOpen(false)
@@ -47,9 +47,7 @@ const UserAccount = () => {
   }
 
   const saveChange = () => {
-    const data = new FormData()
-    Object.keys(formData).map((key) => data.append(key, formData[key]))
-    update(data)
+    update(formData)
       .then(() => {
         handleSnackbarChange(t('user_update_success'), 'success')
         setOpen(false)

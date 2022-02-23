@@ -6,8 +6,8 @@ const theme = createTheme({
     primary: { main: '#00457C' },
     secondary: { main: '#0072FF' },
     background: {
-      default: '#ffff',
-      paper: '#f5f5f5'
+      default: '#ffff', // dark:'#121212',
+      paper: '#f5f5f5' // dark: '#1C1C1C'
     },
     text: {
       primary: '#000',
@@ -45,7 +45,8 @@ const theme = createTheme({
         border: '1px solid #bdbdbd',
         backgroundColor: '#fafafa',
         opacity: 1,
-        transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+        transition:
+          'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
       }
     }
   },

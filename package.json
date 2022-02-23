@@ -31,13 +31,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --allowEmpty --passWithNoTests ",
+    "test": "jest -i --silent --colors --verbose --detectOpenHandles --passWithNoTests ",
     "coverage": "react-scripts test --coverage",
     "test:watch": "test --watchAll",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
-    "prettier": "prettier --check src/**/*.ts",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "prettier": "prettier --check src/**/*.js",
     "prettier:fix": "prettier --write ",
     "prepare": "husky install"
   },
@@ -76,7 +76,9 @@
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-standard": "^5.0.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
-    "lint-staged": "^12.3.4"
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.5.1"
   }
 }

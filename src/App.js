@@ -7,7 +7,8 @@ import router from 'router/routes'
 import light from 'shared/theme/light'
 import dark from 'shared/theme/dark'
 
-import { SwitchThemeContext } from 'shared/components/organisms/SwitchTheme/SwitchTheme'
+import { SwitchThemeContext } from 'shared/components/SwitchTheme/SwitchTheme'
+import SettingsNav from 'shared/components/SettingsNav'
 
 function App() {
   const routes = useRoutes(router)
@@ -15,6 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'dark' ? dark : light}>
       <CssBaseline />
+      <SettingsNav />
       {routes}
     </ThemeProvider>
   )

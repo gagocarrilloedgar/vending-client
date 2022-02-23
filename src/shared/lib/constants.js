@@ -1,5 +1,4 @@
 const USER = 'user'
-const SELLER = 'seller'
 const VERIFICATION = 'verification'
 const PASSWORD = 'password'
 const FORGOT = 'forgot'
@@ -14,11 +13,8 @@ export const navigation = {
   password: `/${PASSWORD}`,
   forgotPassword: `/${PASSWORD}/${FORGOT}`,
   resetPassword: `/${PASSWORD}/${RESET}`,
+  userAccount: `/${USER}/${ACCOUNT}`,
   user: `/${USER}`,
   userLogin: `/${USER}/${LOGIN}`,
-  userRegister: `/${USER}/${REGISTER}`,
-  seller: `/${SELLER}`,
-  sellerRegister: `/${SELLER}/${REGISTER}`,
-  sellerLogin: `/${SELLER}/${LOGIN}`,
-  sellerSettings: `/${SELLER}/${ACCOUNT}`
+  userRegister: `/${USER}/${REGISTER}`
 }
