@@ -1,33 +1,22 @@
 import axios from 'axios'
 
-const baseRoute = process.env.REACT_APP_API_URL + 'user/'
-
-axios.create({
-  baseURL: baseRoute,
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
+const userRoute = process.env.REACT_APP_API_URL + 'user/'
+const authRoute = process.env.REACT_APP_API_URL + 'auth/'
 
 const routes = {
-  login: 'login/',
-  register: 'register/',
-  forgotPassword: 'forgot-password/',
-  resetPassword: 'reset-password/',
-  transactions: 'transactions/',
-  acceptTransaction: 'accept-transaction/'
+  login: authRoute + 'login',
+  register: authRoute + 'register'
 }
 
 const api = {
-  getById: async (id) => axios.get(baseRoute + id),
-  update: async (id, user) => axios.patch(baseRoute + id, user),
+  getById: async (id) => axios.get(routes.login + id),
+  update: async (id, user) => axios.patch(userRoute + id, user),
+  delete: async (id) => axios.delete(userRoute + id),
   login: async (user) => axios.post(routes.login, user),
-  register: async (user) => axios.post(routes.register, user),
-  forgotPassword: async (email) => axios.post(routes.forgotPassword, { email }),
-  resetPasword: async (token, password) =>
-    axios.post(routes.resetPassword, { token, password }),
-  getTransactions: async (id) => axios.get(routes.transactions + id),
-  acceptTransaction: async (id) => axios.get(routes.acceptTransaction + id)
+  register: async (user) => {
+    console.log(user)
+    axios.post(routes.register, user)
+  }
 }
 
 export default api

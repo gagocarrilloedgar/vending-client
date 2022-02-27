@@ -29,19 +29,22 @@ const Register = ({ handleSubmit, title, actionText, loginLink }) => {
   const [passwordConfirmError, setPasswordConfirmError] = useState(false)
 
   const sendCondition = useMemo(
-    () =>
-      !emailError &&
-      !passwordError &&
-      !passwordConfirmError &&
-      formData.email !== '',
-    [emailError, passwordError, passwordConfirmError, formData.email]
+    () => emailError && passwordError && passwordConfirmError,
+    [emailError, passwordError, passwordConfirmError]
   )
+
+  console.log(sendCondition)
 
   const { t } = useTranslation()
 
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData({ ...formData, [name]: value })
+  }
+
+  const submit = (event) => {
+    event.preventDefault()
+    handleSubmit(sendCondition, formData)
   }
 
   return (
@@ -60,11 +63,7 @@ const Register = ({ handleSubmit, title, actionText, loginLink }) => {
         <Typography gutterBottom component="h1" variant="h5">
           {title}
         </Typography>
-        <Box
-          component="form"
-          onSubmit={() => handleSubmit(sendCondition)}
-          sx={{ mt: 3 }}
-        >
+        <form onSubmit={submit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <EmailFields
@@ -107,7 +106,7 @@ const Register = ({ handleSubmit, title, actionText, loginLink }) => {
               </Link>
             </Grid>
           </Grid>
-        </Box>
+        </form>
       </Box>
       <Copyright sx={{ mt: 5 }} />
     </Container>

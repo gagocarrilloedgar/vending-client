@@ -16,6 +16,7 @@ const UserRegister = () => {
   const navigate = useNavigate()
 
   const handleSubmit = (error, data) => {
+    console.log(error)
     if (error) return handleSnackbarChange(t('user_register_error'), 'error')
     register(data)
       .then(() => {
